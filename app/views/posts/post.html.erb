@@ -1,0 +1,32 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">Post</div>
+    <div class="form users-form">
+  
+      <div class="form-body">
+
+         <% @post.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_for(@post, :url => { controller:'posts', action:'create'})do |f| %>
+           
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+            
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+
+            <div class="btn">
+              <%= f.submit "送信" %>
+            </div>
+            
+         <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>

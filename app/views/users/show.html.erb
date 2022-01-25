@@ -1,0 +1,47 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/user_images/#{@user.image_name}"%>">
+      <h2 class="title"><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+       <%= link_to("編集", "/users/#{@user.id}/edit") %>
+
+    </div>
+
+    <% per = $per.to_i%>
+
+    <div class="skillbar clearfix " data-percent="<%= per %>%">
+      <div class="skillbar-title" style="background: #88cd2a;"><span><i class="fas fa-plane"></i></span></div>
+      <div class="skillbar-bar" style="background: #88cd2a;"></div>
+      <div class="skill-bar-percent"><%= per %>%</div>
+    </div>
+    <!---  CSS --->
+    <!--- 
+    
+    <div class="skillbar clearfix " data-percent="85%">
+      <div class="skillbar-title" style="background: #00a8ff;"><span>CSS</span></div>
+      <div class="skillbar-bar" style="background: #00a8ff;"></div>
+      <div class="skill-bar-percent">85%</div>
+    </div>
+    
+    <div class="skillbar clearfix " data-percent="60%">
+      <div class="skillbar-title" style="background: #00a8ff;"><span>CSS</span></div>
+      <div class="skillbar-bar" style="background: #00a8ff;"></div>
+      <div class="skill-bar-percent">60%</div>
+    </div>
+    
+    --->
+    
+    <!----- /jQuery  ------->
+
+    <script>
+      jQuery('.skillbar').each(function(){
+        jQuery(this).find('.skillbar-bar').animate({
+          width:jQuery(this).attr('data-percent')
+        },2000);
+      });
+    </script>
+
+
+  </div>
+</div>

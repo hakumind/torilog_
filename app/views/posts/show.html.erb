@@ -1,0 +1,27 @@
+<div class="main posts-show">
+  <div class="container-posts">
+    <div class="kara-show">
+
+        <div class="posts-show-item">
+
+            <div class="post-menus">
+                <%= link_to("/posts/memory")do %>
+                <i class="far fa-times-circle"></i>
+                <% end %>
+            </div>
+
+            <%= image_tag @post.image_url, size: "250x200"%>
+            <p><%= @post.name%></p>
+        </div>
+
+        <div class="post-time">
+            <%= @post.created_at %>
+        </div>
+
+        <%= link_to("/posts/#{@post.id}/destroy", {method: "post"})do %>
+            <i class="far fa-trash-alt"></i>
+        <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="main posts-index">
+  <div class="container-posts">
+
+      <div class="form-heading-memory">Memory</div>
+
+        <% @posts.each do |t| %>
+
+          <div class="kara-memory">
+
+            <%=link_to("/posts/#{t.id}") do%>
+
+              <div class="posts-select-item-memory">
+              
+                <%= image_tag t.image_url, size: "250x200"%>
+                
+                <%= link_to(t.name, "/posts/#{t.id}") %>
+              
+              </div>
+
+            <% end %>
+            
+          </div>
+
+        <% end %>
+        
+        <% $per = (@posts.length.to_f/23.to_f*100).round%>
+        
+        
+  </div>
+</div>
